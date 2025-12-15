@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Phantom Callback</title>
+</head>
+
+<body>
+	Processing Phantom callback...
+	<script>
+		console.log('Callback script running');
+
+		// DOM 로드 완료 후 실행
+		window.onload = function () {
+			console.log('Window loaded');
+
+			const params = new URLSearchParams(window.location.search);
+			const message = {
+				type: 'PHANTOM_RESPONSE',
+				params: Object.fromEntries(params.entries()),
+				rawUrl: window.location.href
+			};
+			
+			try {
+				// 브로드캐스트 채널 사용
+				const bc = new BroadcastChannel('phantom_callback');
+				bc.postMessage(message);
+						
+				window.postMessage(message, '*');
+				setTimeout(() => {
+					window.close();
+				}, 500);
+			} catch (error) {
+				console.error('Error in callback:', error);
+			}
+		};
+	</script>
+</body>
+
+</html>

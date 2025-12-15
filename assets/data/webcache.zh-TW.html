@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>瀏覽器和Telegram MiniApp緩存清理指南</title>
+	<style>
+		body {
+			font-family: "Microsoft JhengHei", "PMingLiU", sans-serif;
+			line-height: 1.6;
+			color: #e0e0e0;
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #1f1f1f;
+		}
+
+		h1 {
+			color: #00B8A9;
+			text-align: center;
+			padding-bottom: 10px;
+			border-bottom: 2px solid #00B8A9;
+			margin-bottom: 30px;
+		}
+
+		h2 {
+			color: #00B8A9;
+			margin-top: 30px;
+			padding-bottom: 5px;
+			border-bottom: 1px solid #ddd;
+		}
+
+		p {
+			margin-bottom: 20px;
+		}
+
+		.faq-item {
+			background-color: #2a2a2a;
+			padding: 15px 20px;
+			margin-bottom: 15px;
+			border-radius: 8px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+		}
+
+		.faq-question {
+			font-weight: bold;
+			color: #00D7C3;
+			margin-bottom: 10px;
+			font-size: 1.1em;
+		}
+
+		.faq-answer {
+			padding-left: 15px;
+		}
+
+		ul,
+		ol {
+			padding-left: 20px;
+		}
+
+		li {
+			margin-bottom: 8px;
+		}
+
+		.warning {
+			background-color: #343434;
+			border-left: 4px solid #00B8A9;
+			padding: 10px 15px;
+			margin: 15px 0;
+		}
+
+		.browser-section {
+			margin-top: 20px;
+			border-top: 1px dotted #444;
+			padding-top: 15px;
+		}
+
+		.platform {
+			display: inline-block;
+			background-color: #008F84;
+			color: white;
+			padding: 2px 8px;
+			border-radius: 4px;
+			font-size: 0.8em;
+			margin-right: 6px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>瀏覽器和Telegram MiniApp緩存清理指南</h1>
+
+	<h2>Web瀏覽器緩存清理</h2>
+
+	<div class="faq-item">
+		<div class="faq-question">1. 如何清除Chrome瀏覽器緩存</div>
+		<div class="faq-answer">
+			<div class="browser-section">
+				<span class="platform">PC電腦</span>
+				<ol>
+					<li>點擊Chrome瀏覽器右上角的三點選單(⋮)。</li>
+					<li>選擇「設定」。</li>
+					<li>點擊「隱私權和安全性」。</li>
+					<li>選擇「清除瀏覽資料」。</li>
+					<li>將時間範圍設定為「所有時間」。</li>
+					<li>勾選「Cookie和其他網站資料」和「快取的圖片和檔案」。</li>
+					<li>點擊「清除資料」按鈕。</li>
+				</ol>
+				<p>快速方法: 按下<code>Ctrl + Shift + Delete</code>組合鍵可直接打開清除瀏覽資料視窗。</p>
+			</div>
+
+			<div class="browser-section">
+				<span class="platform">手機移動端</span>
+				<ol>
+					<li>開啟Chrome應用程式。</li>
+					<li>點擊右上角的三點選單(⋮)。</li>
+					<li>點擊「設定」。</li>
+					<li>點擊「隱私權和安全性」。</li>
+					<li>點擊「清除瀏覽資料」。</li>
+					<li>將時間範圍設定為「所有時間」。</li>
+					<li>勾選「Cookie和其他網站資料」和「快取的圖片和檔案」。</li>
+					<li>點擊「清除資料」按鈕。</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">2. 如何清除Safari瀏覽器緩存</div>
+		<div class="faq-answer">
+			<div class="browser-section">
+				<span class="platform">PC電腦 (Mac)</span>
+				<ol>
+					<li>開啟Safari瀏覽器。</li>
+					<li>在頂部選單列點擊「Safari」。</li>
+					<li>選擇「偏好設定」。</li>
+					<li>點擊「隱私」分頁。</li>
+					<li>點擊「管理網站資料」。</li>
+					<li>點擊「移除所有」或選擇特定網站進行移除。</li>
+					<li>點擊「完成」。</li>
+				</ol>
+				<p>或者，您可以選擇「Safari」>「清除歷史記錄和網站資料」以更快地清除資料。</p>
+			</div>
+
+			<div class="browser-section">
+				<span class="platform">手機移動端 (iOS)</span>
+				<ol>
+					<li>開啟iPhone或iPad上的「設定」應用程式。</li>
+					<li>向下捲動並點擊「Safari」。</li>
+					<li>點擊「清除歷史記錄和網站資料」。</li>
+					<li>在確認訊息中點擊「清除歷史記錄和資料」。</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">3. 如何清除Firefox瀏覽器緩存</div>
+		<div class="faq-answer">
+			<div class="browser-section">
+				<span class="platform">PC電腦</span>
+				<ol>
+					<li>點擊右上角的選單按鈕(≡)。</li>
+					<li>選擇「設定」。</li>
+					<li>點擊「隱私權和安全性」。</li>
+					<li>在「Cookie和網站資料」部分，點擊「清除資料」。</li>
+					<li>勾選「快取的網路內容」和「Cookie和網站資料」。</li>
+					<li>點擊「清除」按鈕。</li>
+				</ol>
+				<p>快速方法: 按下<code>Ctrl + Shift + Delete</code>組合鍵可直接打開清除資料視窗。</p>
+			</div>
+
+			<div class="browser-section">
+				<span class="platform">手機移動端</span>
+				<ol>
+					<li>開啟Firefox應用程式。</li>
+					<li>點擊右下角的選單按鈕(≡)。</li>
+					<li>點擊「設定」。</li>
+					<li>點擊「資料管理」。</li>
+					<li>選擇要刪除的資料類型（緩存、Cookie等）。</li>
+					<li>點擊「清除資料」。</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">4. 如何清除Edge瀏覽器緩存</div>
+		<div class="faq-answer">
+			<div class="browser-section">
+				<span class="platform">PC電腦</span>
+				<ol>
+					<li>點擊右上角的三點選單(⋯)。</li>
+					<li>選擇「設定」。</li>
+					<li>點擊「隱私權、搜尋和服務」。</li>
+					<li>在「清除瀏覽資料」下點擊「選擇要清除的項目」。</li>
+					<li>將時間範圍設定為「所有時間」。</li>
+					<li>勾選「Cookie和其他網站資料」和「快取的圖片和檔案」。</li>
+					<li>點擊「立即清除」按鈕。</li>
+				</ol>
+				<p>快速方法: 按下<code>Ctrl + Shift + Delete</code>組合鍵可直接打開清除資料視窗。</p>
+			</div>
+
+			<div class="browser-section">
+				<span class="platform">手機移動端</span>
+				<ol>
+					<li>開啟Edge應用程式。</li>
+					<li>點擊底部的三點選單(⋯)。</li>
+					<li>點擊「設定」。</li>
+					<li>點擊「隱私權和安全性」。</li>
+					<li>點擊「清除瀏覽資料」。</li>
+					<li>選擇要清除的時間範圍和資料類型。</li>
+					<li>點擊「清除資料」。</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">5. 如何清除Samsung Internet瀏覽器緩存</div>
+		<div class="faq-answer">
+			<div class="browser-section">
+				<span class="platform">手機移動端</span>
+				<ol>
+					<li>開啟Samsung Internet應用程式。</li>
+					<li>點擊右下角的選單按鈕(≡)。</li>
+					<li>點擊「設定」。</li>
+					<li>點擊「隱私權和安全性」。</li>
+					<li>點擊「刪除瀏覽資料」。</li>
+					<li>勾選「快取」和「Cookie和網站資料」。</li>
+					<li>點擊「刪除」按鈕。</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<h2>Telegram MiniApp緩存清理</h2>
+
+	<div class="faq-item">
+		<div class="faq-question">6. 如何清除Telegram PC版中的MiniApp緩存</div>
+		<div class="faq-answer">
+			<div class="browser-section">
+				<span class="platform">PC電腦</span>
+				<ol>
+					<li>開啟Telegram桌面應用程式。</li>
+					<li>點擊左上角的漢堡選單(≡)。</li>
+					<li>選擇「設定」。</li>
+					<li>點擊「進階」。</li>
+					<li>點擊「資料和儲存空間」。</li>
+					<li>點擊「清除緩存」。</li>
+					<li>點擊「清除」確認。</li>
+				</ol>
+				<p class="warning">
+					這將同時清除所有MiniApp的緩存。如果您只想重置特定的MiniApp，請嘗試重新開啟該MiniApp並按刷新鍵(F5)，或檢查該MiniApp的設定中是否有緩存清除選項。
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">7. 如何清除Telegram移動版中的MiniApp緩存</div>
+		<div class="faq-answer">
+			<div class="browser-section">
+				<span class="platform">Android安卓</span>
+				<ol>
+					<li>開啟Telegram應用程式。</li>
+					<li>點擊左上角的漢堡選單(≡)。</li>
+					<li>點擊「設定」。</li>
+					<li>點擊「資料和儲存空間」。</li>
+					<li>點擊「儲存空間用量」。</li>
+					<li>點擊「清除緩存」。</li>
+					<li>點擊「清除」確認。</li>
+				</ol>
+			</div>
+
+			<div class="browser-section">
+				<span class="platform">iOS蘋果</span>
+				<ol>
+					<li>開啟Telegram應用程式。</li>
+					<li>點擊底部的「設定」分頁。</li>
+					<li>點擊「資料和儲存空間」。</li>
+					<li>點擊「儲存空間用量」。</li>
+					<li>點擊「清除緩存」。</li>
+					<li>點擊「清除緩存」確認。</li>
+				</ol>
+			</div>
+
+			<p class="warning">
+				完全關閉並重新開啟Telegram應用程式也有助於重置MiniApp的緩存。此外，一些MiniApp可能在應用內提供自己的緩存清除選項，請檢查MiniApp的設定。
+			</p>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">8. 如何刷新特定的網頁遊戲/MiniApp</div>
+		<div class="faq-answer">
+			<p>
+				不完全清除緩存而刷新網頁遊戲或MiniApp的方法:
+			</p>
+
+			<div class="browser-section">
+				<span class="platform">PC電腦</span>
+				<ul>
+					<li>大多數瀏覽器: 按<code>F5</code>鍵或<code>Ctrl + R</code>。</li>
+					<li>強制刷新（忽略緩存）: 按<code>Ctrl + F5</code>或<code>Ctrl + Shift + R</code>。</li>
+					<li>Telegram MiniApp: 在MiniApp界面按<code>F5</code>鍵，或關閉並重新開啟MiniApp。</li>
+				</ul>
+			</div>
+
+			<div class="browser-section">
+				<span class="platform">手機移動端</span>
+				<ul>
+					<li>大多數瀏覽器: 向下拉動螢幕進行刷新。</li>
+					<li>Telegram MiniApp: 關閉並重新開啟MiniApp，或完全退出Telegram應用程式後重新啟動。</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">9. 清除緩存後問題仍未解決怎麼辦</div>
+		<div class="faq-answer">
+			<p>
+				如果清除緩存後問題仍然存在，請嘗試以下方法:
+			</p>
+			<ul>
+				<li>將瀏覽器或Telegram應用程式更新到最新版本。</li>
+				<li>嘗試使用不同的瀏覽器訪問。</li>
+				<li>切換行動數據和Wi-Fi網路。</li>
+				<li>重新啟動裝置。</li>
+				<li>聯繫網頁遊戲或MiniApp的開發者尋求支援。</li>
+			</ul>
+			<p class="warning">
+				對於某些遊戲或應用程式，登入資訊可能儲存在伺服器上，僅清除緩存無法重置。在這種情況下，嘗試登出並重新登入您的帳戶。
+			</p>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">10. 為什麼需要定期管理緩存</div>
+		<div class="faq-answer">
+			<p>
+				定期管理緩存的重要原因:
+			</p>
+			<ul>
+				<li>提高網頁遊戲效能: 過時的緩存檔案可能會降低遊戲載入速度。</li>
+				<li>修復故障: 更新後的遊戲或應用程式的新版本可能無法在舊緩存下正常載入。</li>
+				<li>釋放儲存空間: 緩存會隨著時間的推移佔用大量儲存空間。</li>
+				<li>資料保護: 緩存可能包含個人資訊，定期刪除有助於安全。</li>
+			</ul>
+			<p>
+				在大多數情況下，建議每1-3個月清理一次緩存。當您遇到網頁遊戲或MiniApp問題時，隨時嘗試清除緩存。
+			</p>
+		</div>
+	</div>
+</body>
+
+</html>

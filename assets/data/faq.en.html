@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>BitBULL FAQ</title>
+		<style>
+			body {
+				font-family: "Arial", sans-serif;
+				line-height: 1.6;
+				color: #e0e0e0;
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 20px;
+				background-color: #1f1f1f;
+			}
+
+			h1 {
+				color: #ff6b00;
+				text-align: center;
+				padding-bottom: 10px;
+				border-bottom: 2px solid #ff6b00;
+				margin-bottom: 30px;
+			}
+
+			h2 {
+				color: #ff6b00;
+				margin-top: 30px;
+				padding-bottom: 5px;
+				border-bottom: 1px solid #ddd;
+			}
+
+			p {
+				margin-bottom: 20px;
+			}
+
+			.faq-item {
+				background-color: #2a2a2a;
+				padding: 15px 20px;
+				margin-bottom: 15px;
+				border-radius: 8px;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+			}
+
+			.faq-question {
+				font-weight: bold;
+				color: #ff8c2e;
+				margin-bottom: 10px;
+				font-size: 1.1em;
+			}
+
+			.faq-answer {
+				padding-left: 15px;
+			}
+
+			ul,
+			ol {
+				padding-left: 20px;
+			}
+
+			li {
+				margin-bottom: 8px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>BitBULL Frequently Asked Questions (FAQ)</h1>
+
+		<div class="faq-item">
+			<div class="faq-question">1. What is BitBULL?</div>
+			<div class="faq-answer">
+				<p>
+					BitBULL is a game where you predict whether the Bitcoin
+					futures price will rise or fall after @@gameperiod@@ seconds.
+				</p>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">2. Game Description</div>
+			<div class="faq-answer">
+				<p>
+					BitBULL is a game where you predict whether the Bitcoin
+					futures price will rise or fall after @@gameperiod@@ seconds.
+				</p>
+				<ul>
+					<li>
+						If your prediction is correct, you take the betting amount from the
+						opposite side as your winning prize.
+					</li>
+					<li>If your prediction is wrong, you lose your bet amount.</li>
+					<li>
+						If you make the correct prediction alone, you can receive a big
+						reward by taking all the betting amounts from the opposite side.
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">3. Betting Rules</div>
+			<div class="faq-answer">
+				<p>
+					<strong>Betting is only possible from a fixed list of amounts</strong>
+				</p>
+				<ul>
+					<li>
+						Currently, the available betting amounts are @@betlist@@ gold.
+					</li>
+				</ul>
+				<p><strong>Only one bet is allowed</strong></p>
+				<ul>
+					<li>
+						Additional betting is not allowed after betting once. (Example:
+						After betting 5 gold, you cannot add an additional 10 gold)
+					</li>
+				</ul>
+				<p><strong>Betting on both sides is not allowed</strong></p>
+				<ul>
+					<li>
+						You cannot bet on both Up and Down sides simultaneously in one
+						round.
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">4. How are the odds calculated?</div>
+			<div class="faq-answer">
+				<p>
+					The odds automatically fluctuate based on the total amount of gold
+					collected on Up and Down.
+				</p>
+				<p><strong>Calculation method:</strong></p>
+				<ol>
+					<li>Total gold collected on Up and Down is summed.</li>
+					<li>A set rake (@@rake@@%) is deducted.</li>
+					<li>
+						The remaining amount is distributed according to the ratio of
+						betting amounts on Up/Down.
+					</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">5. How much can I receive if I win a bet?</div>
+			<div class="faq-answer">
+				<p>
+					The payout is determined by taking your proportion from the opposite
+					pool.
+				</p>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">
+				6. What situations result in a draw (void)?
+			</div>
+			<div class="faq-answer">
+				<p>
+					If the price after @@gameperiod@@ seconds is identical to the starting
+					price of the bet, the game is voided and the bet gold is returned as
+					is.
+				</p>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">7. How do deposits and withdrawals work?</div>
+			<div class="faq-answer">
+				<ul>
+					<li>
+						<strong>Deposit:</strong> When you send USDT to the wallet address,
+						it is automatically converted to gold. (The user must bear the
+						transfer fee incurred during deposit.)
+					</li>
+					<li>
+						<strong>Withdrawal:</strong> It is processed within 30 minutes after
+						administrator confirmation, and the platform bears the transfer fee
+						for withdrawals.
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">
+				8. Where is the Bitcoin futures price data pulled from?
+			</div>
+			<div class="faq-answer">
+				<p>
+					BitBULL determines the Bitcoin price based on Binance Futures
+					prices.
+				</p>
+				<p>
+					Binance provides the most liquid market among global cryptocurrency
+					exchanges, ensuring fair gameplay by reflecting real-time reliable
+					data.
+				</p>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">9. How are platform fees charged?</div>
+			<div class="faq-answer">
+				<ul>
+					<li>
+						<strong>Game fee:</strong> @@rake@@% rake is deducted from the total
+						bet amount.
+					</li>
+					<li>
+						<strong>Deposit fee:</strong> The network transfer fee incurred when
+						depositing USDT is borne by the user.
+					</li>
+					<li>
+						<strong>Withdrawal fee:</strong> The network transfer fee incurred
+						when withdrawing USDT is borne by the platform.
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">10. Is it a fair game?</div>
+			<div class="faq-answer">
+				<p>
+					Yes, it operates fairly by reflecting real-time data from the Binance
+					Futures market. It uses a transparent algorithm that makes price
+					manipulation impossible.
+				</p>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">11. How is account security guaranteed?</div>
+			<div class="faq-answer">
+				<p>BitBULL prioritizes user security.</p>
+				<ul>
+					<li>
+						<strong>Password security:</strong> Passwords must be set to at
+						least 8 characters including uppercase letters, lowercase letters,
+						numbers, and special characters.
+					</li>
+					<li>
+						<strong>Data encryption:</strong> The platform stores information in
+						the database (DB) using strong encryption methods.
+					</li>
+					<li>
+						<strong>Security protocol:</strong> Service is provided using HTTPS
+						protocol. Important data is safely transmitted through additional
+						encryption.
+					</li>
+					<li>
+						<strong>Simultaneous access restriction:</strong> You cannot play
+						games simultaneously on multiple devices with the same account.
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">12. How can I receive customer support?</div>
+			<div class="faq-answer">
+				<p>
+					BitBULL provides customer support through a 1:1 inquiry
+					system.
+				</p>
+				<ul>
+					<li>
+						<strong>24-hour real-time response:</strong> Professional GMs (Game
+						Masters) handle inquiries in real-time. You can receive prompt
+						answers after submitting an inquiry.
+					</li>
+					<li>
+						<strong>How to inquire:</strong> Use the 1:1 inquiry system within
+						the site
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

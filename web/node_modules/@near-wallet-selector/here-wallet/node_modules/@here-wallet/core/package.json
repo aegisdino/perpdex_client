@@ -1,0 +1,69 @@
+{
+  "name": "@here-wallet/core",
+  "version": "3.3.1",
+  "description": "HereWallet lib for near-selector",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "type": "commonjs",
+  "exports": {
+    ".": "./build/index.js",
+    "./qrcode-strategy": "./build/qrcode-strategy/index.js",
+    "./telegramEthereumProvider": "./build/telegramEthereumProvider.js"
+  },
+  "typesVersions": {
+    "*": {
+      "telegramEthereumProvider": [
+        "build/telegramEthereumProvider.d.ts"
+      ],
+      "qrcode-strategy": [
+        "build/qrcode-strategy/index.d.ts"
+      ]
+    }
+  },
+  "homepage": "https://github.com/here-wallet/near-selector",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/here-wallet/near-selector.git"
+  },
+  "scripts": {
+    "example": "parcel example/index.html example/success.html --open",
+    "build:example": "parcel build example/success.html example/index.html",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@near-js/accounts": "^1.2.1",
+    "@near-js/crypto": "^1.2.4",
+    "@near-js/types": "^0.2.1",
+    "@near-js/utils": "^0.2.2",
+    "js-sha256": "^0.11.0",
+    "sha1": "^1.1.1",
+    "uuid4": "2.0.3"
+  },
+  "peerDependencies": {
+    "bn.js": "5.2.1",
+    "borsh": "0.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "@types/bn.js": "5.1.1",
+    "@types/sha1": "^1.1.3",
+    "@types/uuid4": "^2.0.0",
+    "parcel-bundler": "^1.6.1",
+    "typescript": "4.4.4"
+  },
+  "keywords": [
+    "near",
+    "hot-coin",
+    "ethereum",
+    "herewallet",
+    "web3"
+  ],
+  "bugs": {
+    "url": "https://github.com/here-wallet/near-selector/issues"
+  },
+  "author": "here-wallet",
+  "license": "ISC",
+  "directories": {
+    "example": "example"
+  }
+}

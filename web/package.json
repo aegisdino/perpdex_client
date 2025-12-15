@@ -1,0 +1,27 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "wallet-selector.bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@near-wallet-selector/core": "^8.9.13",
+    "@near-wallet-selector/here-wallet": "^8.9.13",
+    "@near-wallet-selector/meteor-wallet": "^8.9.13",
+    "@near-wallet-selector/modal-ui": "^8.9.13",
+    "@near-wallet-selector/my-near-wallet": "^8.9.13",
+    "@near-wallet-selector/nightly": "^10.1.0",
+    "@near-wallet-selector/sender": "^10.1.0",
+    "@near-wallet-selector/wallet-connect": "^10.1.0"
+  },
+  "devDependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
+    "esbuild": "^0.25.12"
+  }
+}

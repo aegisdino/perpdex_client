@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+		<base href="$FLUTTER_BASE_HREF" />
+
+		<meta charset="UTF-8" />
+		<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+		<meta name="description" content="perpdex" />
+
+		<!-- Security Headers -->
+		 <!--
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src 'self';
+					   script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://telegram.org https://unpkg.com https://bundle.run https://www.gstatic.com https://secure.walletconnect.com https://secure.walletconnect.org;
+	               	   script-src-elem 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://telegram.org https://unpkg.com https://bundle.run https://www.gstatic.com https://secure.walletconnect.com https://secure.walletconnect.org;
+	                   style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://secure.walletconnect.com https://secure.walletconnect.org;		               img-src 'self' data: https: blob:;
+		               font-src 'self' data: https: https://fonts.gstatic.com;
+		               connect-src 'self' https: wss: ws: http://127.0.0.1:* http://localhost:*;
+		               worker-src 'self' blob:;
+		               frame-src 'self' https://verify.walletconnect.org https://secure.walletconnect.com https://secure.walletconnect.org https://wallet.near.org https://app.mynearwallet.com https://my.herewallet.app;
+		               base-uri 'self';
+		               form-action 'self'"
+		/>
+		<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+		<meta
+			http-equiv="Referrer-Policy"
+			content="strict-origin-when-cross-origin"
+		/>
+		<meta
+			http-equiv="Permissions-Policy"
+			content="geolocation=(), microphone=(), camera=()"
+		/>
+		-->
+
+		<!-- don't let chrome try translation -->
+		<meta name="google" content="notranslate" />
+
+		<!-- cache control - HTML만 no-cache, 정적 자산은 버전으로 관리 -->
+		<meta http-equiv="Cache-Control" content="no-cache" />
+
+		<!-- iOS meta tags & icons -->
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta
+			name="apple-mobile-web-app-status-bar-style"
+			content="black-translucent"
+		/>
+		<meta name="apple-mobile-web-app-title" content="Perpdex PWA" />
+		<link rel="apple-touch-icon" href="icons/Icon-192.png" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="favicon.png" />
+
+		<!-- Menu bar style -->
+		<meta name="theme-color" content="#191919" />
+
+		<title>Perpdex Dex</title>
+		<link rel="manifest" href="manifest.json" />
+
+		<script>
+			// Phantom wallet for SOL
+			window.solana = window.solana || {};
+
+			// Tronlink wallet for USDT
+			window.addEventListener("tronLink#initialized", function () {
+				window.tronLink.ready = true;
+			});
+
+			if (!window.crypto?.randomUUID) {
+				window.crypto.randomUUID = () => {
+					return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+						(
+							c ^
+							(crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+						).toString(16)
+					);
+				};
+			}
+		</script>
+
+		<!-- Solana -->
+		<script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+		<script src="https://bundle.run/buffer@6.0.3"></script>
+		<script src="scripts/solana.js"></script>
+		<script src="scripts/solana_selector.js" defer></script>
+
+		<!-- NEAR Wallet Selector (번들 사용) -->
+		<link rel="stylesheet" href="https://unpkg.com/@near-wallet-selector/modal-ui@8.9.13/styles.css">
+		<script src="wallet-selector.bundle.js"></script>
+		<script src="scripts/near_selector.js" defer></script>
+
+		<script>
+			// The value below is injected by flutter build, do not touch.
+			const serviceWorkerVersion = '{{flutter_service_worker_version}}';
+			const version = serviceWorkerVersion.replace(/"/g, '');
+		</script>
+
+		<!-- This script adds the flutter initialization JS code -->
+		<script src="flutter.js" defer></script>
+
+		<!-- flutter_inappwebview_web: 웹에서는 사용하지 않음 (모바일 전용) -->
+		<script type="application/javascript" src="/assets/packages/flutter_inappwebview_web/assets/web/web_support.js"
+			defer></script>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/howler@2.2.3/dist/howler.min.js"
+			integrity="sha384-46Oo18A61vfMErbleKnm7no+MU4xWkCYAHfFjdeBgYnq5437neF0hgpBaX/YM8fu"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<!-- 로딩 화면 -->
+		<div class="splash-container" id="splash">
+			<img
+				src="loading-logo.gif"
+				alt="Perp Dex Logo"
+				class="logo-image"
+				id="logoImg"
+			/>
+			<div class="loading-container">
+				<div class="loading-bar">
+					<div class="loading-progress"></div>
+				</div>
+			</div>
+		</div>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			canvas,
+			flt-canvas,
+			.flt-glass-pane {
+				background-color: #191919 !important;
+			}
+			html,
+			body {
+				font-family: "Arial", sans-serif;
+				background: #191919;
+				background: linear-gradient(
+					135deg,
+					#191919 0%,
+					#181b26 50%,
+					#191919 100%
+				);
+				overflow: hidden;
+				height: 100vh;
+				position: relative;
+			}
+			.splash-container {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 9999;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				background: linear-gradient(
+					135deg,
+					#191919 0%,
+					#181b26 50%,
+					#191919 100%
+				);
+			}
+			.logo-image {
+				margin-bottom: 0px;
+				max-width: 130px;
+				height: auto;
+			}
+
+			/* loading bar */
+			.loading-container {
+				margin-top: 40px;
+				width: 300px;
+			}
+
+			.loading-text {
+				color: #ffd700;
+				font-size: 1.1rem;
+				font-weight: 700;
+				margin-bottom: 15px;
+				letter-spacing: 2px;
+			}
+
+			.loading-bar {
+				width: 100%;
+				height: 6px;
+				background: rgba(255, 255, 255, 0.1);
+				border-radius: 3px;
+				overflow: hidden;
+				box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+			}
+
+			.loading-progress {
+				height: 100%;
+				background: linear-gradient(90deg, #ffd700, #ffed4e, #ffd700);
+				background-size: 200% 100%;
+				border-radius: 3px;
+				animation: loadProgress 2.5s ease-in-out forwards, shimmer 1.5s infinite;
+				box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+			}
+
+			@keyframes loadProgress {
+				from {
+					width: 0%;
+				}
+				to {
+					width: 100%;
+				}
+			}
+
+			@keyframes shimmer {
+				0% {
+					background-position: -200% 0;
+				}
+				100% {
+					background-position: 200% 0;
+				}
+			}
+
+			.splash-container.fade-out {
+				animation: fadeOut 0.8s ease-in-out forwards;
+			}
+
+			@keyframes fadeOut {
+				to {
+					opacity: 0;
+					transform: scale(1.1);
+					background: #3c3c52;
+				}
+			}
+
+			@media (max-width: 768px) {
+				.logo-image {
+					max-width: 130px;
+				}
+			}
+
+			/* WalletConnect AppKit 모달 z-index 강제 설정 */
+			wcm-modal,
+			w3m-modal,
+			appkit-modal,
+			[data-appkit-modal],
+			[id*="appkit"],
+			[id*="walletconnect"] {
+				z-index: 999999 !important;
+			}
+		</style>
+
+		<script>
+			window.addEventListener("load", async function () {
+				// WASM 리소스들도 버전 파라미터 적용
+				_flutter = {
+					loader: {
+						buildConfig: {
+							assetsPath: `/assets?v=${version}`,
+							serviceWorker: {
+								serviceWorkerVersion: serviceWorkerVersion,
+							},
+						},
+						// WASM 로딩 시에도 버전 적용을 위한 설정
+						loadWithEntrypoint: function (options) {
+							options = options || {};
+							options.serviceWorkerSettings = {
+								serviceWorkerVersion: version
+							};
+							// WASM 파일들도 버전 파라미터 추가
+							if (options.mainWasmPath) {
+								options.mainWasmPath += `?v=${version}`;
+							}
+							if (options.jsSupportRuntimePath) {
+								options.jsSupportRuntimePath += `?v=${version}`;
+							}
+							return this._originalLoadWithEntrypoint(options);
+						}
+					},
+				};
+
+				// 원본 함수 백업
+				if (_flutter.loader._originalLoadWithEntrypoint === undefined) {
+					_flutter.loader._originalLoadWithEntrypoint = _flutter.loader.loadWithEntrypoint;
+				}
+
+				const flutterLoader = document.createElement("script");
+				flutterLoader.src = `main.dart.js?version=${version}`;
+				flutterLoader.type = "application/javascript";
+
+				// Flutter 렌더링을 실시간으로 감지 (MutationObserver 사용)
+				const hideSplash = () => {
+					const splash = document.getElementById('splash');
+					const flutterTarget = document.getElementById('flutter_target');
+
+					if (splash && !splash.classList.contains('fade-out')) {
+						// Flutter 타겟 먼저 표시
+						if (flutterTarget) {
+							flutterTarget.classList.add('ready');
+						}
+
+						// 짧은 딜레이 후 스플래시 숨기기
+						setTimeout(() => {
+							splash.classList.add('fade-out');
+							setTimeout(() => {
+								splash.style.display = 'none';
+							}, 800);
+						}, 150);
+					}
+				};
+
+				// DOM 변화 실시간 감지
+				const observer = new MutationObserver((mutations) => {
+					for (let mutation of mutations) {
+						// 1. 새로운 노드가 추가됐을 때
+						if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+							for (let node of mutation.addedNodes) {
+								if (node.nodeType === Node.ELEMENT_NODE) {
+									// Flutter 관련 요소 체크
+									if (node.tagName === 'CANVAS' ||
+										node.classList?.contains('flt-renderer') ||
+										node.tagName === 'FLT-RENDERER' ||
+										node.querySelector?.('canvas')) {
+										hideSplash();
+										observer.disconnect();
+										return;
+									}
+								}
+							}
+						}
+
+						// 2. 속성 변화 감지 (Flutter가 body나 html에 클래스 추가할 때)
+						if (mutation.type === 'attributes') {
+							if (mutation.target.classList?.contains('flutter-view') ||
+								mutation.target.hasAttribute('flt-renderer')) {
+								hideSplash();
+								observer.disconnect();
+								return;
+							}
+						}
+					}
+				});
+
+				// 전체 document 관찰 시작
+				observer.observe(document, {
+					childList: true,
+					subtree: true,
+					attributes: true,
+					attributeFilter: ['class', 'flt-renderer']
+				});
+
+				// Flutter 스크립트 로딩 완료 후에도 기존 체크 방식 유지
+				flutterLoader.onload = function () {
+					setTimeout(() => {
+						// 혹시 이미 렌더링됐는지 체크
+						if (document.querySelector('canvas') ||
+							document.querySelector('flt-renderer') ||
+							document.querySelector('.flt-renderer')) {
+							hideSplash();
+							observer.disconnect();
+						}
+					}, 100);
+				};
+
+				document.body.appendChild(flutterLoader);
+			});
+		</script>
+		<div id="flutter_target"></div>
+	</body>
+</html>

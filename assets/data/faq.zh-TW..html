@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>BitBULL 常見問題 (FAQ)</title>
+		<style>
+			body {
+				font-family: "Arial", "Microsoft JhengHei", "PingFang TC",
+					"Hiragino Sans TC", sans-serif;
+				line-height: 1.6;
+				color: #e0e0e0;
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 20px;
+				background-color: #1f1f1f;
+			}
+
+			h1 {
+				color: #ff6b00;
+				text-align: center;
+				padding-bottom: 10px;
+				border-bottom: 2px solid #ff6b00;
+				margin-bottom: 30px;
+			}
+
+			h2 {
+				color: #ff6b00;
+				margin-top: 30px;
+				padding-bottom: 5px;
+				border-bottom: 1px solid #ddd;
+			}
+
+			p {
+				margin-bottom: 20px;
+			}
+
+			.faq-item {
+				background-color: #2a2a2a;
+				padding: 15px 20px;
+				margin-bottom: 15px;
+				border-radius: 8px;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+			}
+
+			.faq-question {
+				font-weight: bold;
+				color: #ff8c2e;
+				margin-bottom: 10px;
+				font-size: 1.1em;
+			}
+
+			.faq-answer {
+				padding-left: 15px;
+			}
+
+			ul,
+			ol {
+				padding-left: 20px;
+			}
+
+			li {
+				margin-bottom: 8px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>BitBULL 常見問題 (FAQ)</h1>
+
+		<div class="faq-item">
+			<div class="faq-question">1. BitBULL是什麼網站？</div>
+			<div class="faq-answer">
+				<p>
+					BitBULL是一個預測比特幣期貨價格在@@gameperiod@@秒後是上漲還是下跌的遊戲。
+				</p>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">2. 遊戲說明</div>
+			<div class="faq-answer">
+				<p>
+					BitBULL是一個預測比特幣期貨價格在@@gameperiod@@秒後是上漲還是下跌的遊戲。
+				</p>
+				<ul>
+					<li>如果預測正確，您將獲得對方投注金額作為獎金。</li>
+					<li>如果預測錯誤，您將失去投注金額。</li>
+					<li>
+						如果您是唯一正確預測的人，您可以獲得對方所有投注金額作為大獎。
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">3. 投注規則</div>
+			<div class="faq-answer">
+				<p><strong>只能從固定金額列表中投注</strong></p>
+				<ul>
+					<li>目前可選擇的投注金額為5、@@betlist@@ 金幣。</li>
+				</ul>
+				<p><strong>僅限投注一次</strong></p>
+				<ul>
+					<li>投注一次後不能追加投注。（例如：投注5金幣後不能再追加10金幣）</li>
+				</ul>
+				<p><strong>不能雙向投注</strong></p>
+				<ul>
+					<li>在一輪遊戲中不能同時投注漲（Up）和跌（Down）兩邊。</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">4. 賠率是如何計算的？</div>
+			<div class="faq-answer">
+				<p>賠率根據漲（Up）和跌（Down）兩邊收集的總金幣量自動變動。</p>
+				<p><strong>計算方式：</strong></p>
+				<ol>
+					<li>合計漲（Up）和跌（Down）兩邊收集的總金幣。</li>
+					<li>扣除固定的抽成（@@rake@@%）。</li>
+					<li>根據漲/跌兩邊的投注金額比例分配剩餘金額。</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">5. 投注獲勝能獲得多少獎金？</div>
+			<div class="faq-answer">
+				<p>獎金是根據您在對方獎池中的比例來決定的。</p>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">6. 什麼情況下會出現平局（無效）？</div>
+			<div class="faq-answer">
+				<p>
+					如果@@gameperiod@@秒後的價格與投注開始時的價格相同，遊戲將判定為無效，投注的金幣將原數退還。
+				</p>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">7. 如何進行充值和提現？</div>
+			<div class="faq-answer">
+				<ul>
+					<li>
+						<strong>充值：</strong>
+						將USDT發送到錢包地址後會自動轉換為金幣。（充值時產生的轉賬手續費由用戶承擔。）
+					</li>
+					<li>
+						<strong>提現：</strong>
+						管理員確認後30分鐘內處理，提現時的轉賬手續費由平台承擔。
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">8. 比特幣期貨價格數據來源於哪裡？</div>
+			<div class="faq-answer">
+				<p>
+					BitBULL基於幣安期貨（Binance Futures）價格來確定比特幣價格。
+				</p>
+				<p>
+					幣安是全球加密貨幣交易所中流動性最高的市場，因此能夠實時反映可信賴的數據，確保遊戲公平性。
+				</p>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">9. 平台如何收取手續費？</div>
+			<div class="faq-answer">
+				<ul>
+					<li>
+						<strong>遊戲手續費：</strong> 從總投注金額中扣除@@rake@@%的抽成。
+					</li>
+					<li>
+						<strong>充值手續費：</strong>
+						USDT充值時產生的網絡轉賬手續費由用戶承擔。
+					</li>
+					<li>
+						<strong>提現手續費：</strong>
+						USDT提現時產生的網絡轉賬手續費由平台承擔。
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">10. 這是一個公平的遊戲嗎？</div>
+			<div class="faq-answer">
+				<p>
+					是的，遊戲通過反映幣安期貨市場的實時數據公平運營。使用的是價格無法操縱的透明算法。
+				</p>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">11. 帳戶安全如何保障？</div>
+			<div class="faq-answer">
+				<p>BitBULL將用戶安全放在首位。</p>
+				<ul>
+					<li>
+						<strong>密碼安全：</strong>
+						密碼必須設置為至少8位，包含大寫字母、小寫字母、數字和特殊字符。
+					</li>
+					<li>
+						<strong>數據加密：</strong>
+						平台使用強大的加密方式將信息存儲在數據庫(DB)中。
+					</li>
+					<li>
+						<strong>安全協議：</strong>
+						服務使用HTTPS協議提供。重要數據經過額外加密後安全傳輸。
+					</li>
+					<li>
+						<strong>限制同時登錄：</strong>
+						同一帳戶不能在多個設備上同時進行遊戲。
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">12. 如何獲得客戶支持？</div>
+			<div class="faq-answer">
+				<p>BitBULL通過1:1諮詢系統提供客戶支持。</p>
+				<ul>
+					<li>
+						<strong>24小時實時響應：</strong>
+						專業GM（遊戲管理員）實時處理諮詢。提交諮詢後可獲得迅速回復。
+					</li>
+					<li><strong>諮詢方式：</strong> 使用網站內的1:1諮詢系統</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

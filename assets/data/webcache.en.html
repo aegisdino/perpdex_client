@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Browser and Telegram MiniApp Cache Clearing Guide</title>
+	<style>
+		body {
+			font-family: "Arial", sans-serif;
+			line-height: 1.6;
+			color: #e0e0e0;
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #1f1f1f;
+		}
+
+		h1 {
+			color: #00B8A9;
+			text-align: center;
+			padding-bottom: 10px;
+			border-bottom: 2px solid #00B8A9;
+			margin-bottom: 30px;
+		}
+
+		h2 {
+			color: #00B8A9;
+			margin-top: 30px;
+			padding-bottom: 5px;
+			border-bottom: 1px solid #ddd;
+		}
+
+		p {
+			margin-bottom: 20px;
+		}
+
+		.faq-item {
+			background-color: #2a2a2a;
+			padding: 15px 20px;
+			margin-bottom: 15px;
+			border-radius: 8px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+		}
+
+		.faq-question {
+			font-weight: bold;
+			color: #00D7C3;
+			margin-bottom: 10px;
+			font-size: 1.1em;
+		}
+
+		.faq-answer {
+			padding-left: 15px;
+		}
+
+		ul,
+		ol {
+			padding-left: 20px;
+		}
+
+		li {
+			margin-bottom: 8px;
+		}
+
+		.warning {
+			background-color: #343434;
+			border-left: 4px solid #00B8A9;
+			padding: 10px 15px;
+			margin: 15px 0;
+		}
+
+		.browser-section {
+			margin-top: 20px;
+			border-top: 1px dotted #444;
+			padding-top: 15px;
+		}
+
+		.platform {
+			display: inline-block;
+			background-color: #008F84;
+			color: white;
+			padding: 2px 8px;
+			border-radius: 4px;
+			font-size: 0.8em;
+			margin-right: 6px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Browser and Telegram MiniApp Cache Clearing Guide</h1>
+
+	<h2>Web Browser Cache Clearing</h2>
+
+	<div class="faq-item">
+		<div class="faq-question">1. How to clear cache in Chrome browser</div>
+		<div class="faq-answer">
+			<div class="browser-section">
+				<span class="platform">PC</span>
+				<ol>
+					<li>Click on the three dots (⋮) in the top-right corner of Chrome.</li>
+					<li>Select "Settings".</li>
+					<li>Click on "Privacy and security".</li>
+					<li>Select "Clear browsing data".</li>
+					<li>Set the time range to "All time".</li>
+					<li>Check "Cookies and site data" and "Cached images and files".</li>
+					<li>Click the "Clear data" button.</li>
+				</ol>
+				<p>Quick method: Press <code>Ctrl + Shift + Delete</code> to directly open the clear browsing data
+					window.</p>
+			</div>
+
+			<div class="browser-section">
+				<span class="platform">Mobile</span>
+				<ol>
+					<li>Open the Chrome app.</li>
+					<li>Tap the three dots (⋮) in the top-right corner.</li>
+					<li>Tap "Settings".</li>
+					<li>Tap "Privacy and security".</li>
+					<li>Tap "Clear browsing data".</li>
+					<li>Set the time range to "All time".</li>
+					<li>Check "Cookies and site data" and "Cached images and files".</li>
+					<li>Tap the "Clear data" button.</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">2. How to clear cache in Safari browser</div>
+		<div class="faq-answer">
+			<div class="browser-section">
+				<span class="platform">PC (Mac)</span>
+				<ol>
+					<li>Open Safari browser.</li>
+					<li>Click "Safari" in the top menu bar.</li>
+					<li>Select "Settings".</li>
+					<li>Click the "Privacy" tab.</li>
+					<li>Click "Manage Website Data".</li>
+					<li>Click "Remove All" or select specific sites to remove.</li>
+					<li>Click "Done".</li>
+				</ol>
+				<p>Alternatively, you can select "Safari" > "Clear History and Website Data" for a quicker method.</p>
+			</div>
+
+			<div class="browser-section">
+				<span class="platform">Mobile (iOS)</span>
+				<ol>
+					<li>Open the "Settings" app on your iPhone or iPad.</li>
+					<li>Scroll down and tap "Safari".</li>
+					<li>Tap "Clear History and Website Data".</li>
+					<li>Tap "Clear History and Data" in the confirmation message.</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">3. How to clear cache in Firefox browser</div>
+		<div class="faq-answer">
+			<div class="browser-section">
+				<span class="platform">PC</span>
+				<ol>
+					<li>Click the menu button (≡) in the top-right corner.</li>
+					<li>Select "Settings".</li>
+					<li>Click "Privacy & Security".</li>
+					<li>In the "Cookies and Site Data" section, click "Clear Data".</li>
+					<li>Check "Cached Web Content" and "Cookies and Site Data".</li>
+					<li>Click the "Clear" button.</li>
+				</ol>
+				<p>Quick method: Press <code>Ctrl + Shift + Delete</code> to directly open the clearing window.</p>
+			</div>
+
+			<div class="browser-section">
+				<span class="platform">Mobile</span>
+				<ol>
+					<li>Open the Firefox app.</li>
+					<li>Tap the menu button (≡) in the bottom-right corner.</li>
+					<li>Tap "Settings".</li>
+					<li>Tap "Data Management".</li>
+					<li>Select the data types you want to delete (cache, cookies, etc.).</li>
+					<li>Tap "Clear Data".</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">4. How to clear cache in Edge browser</div>
+		<div class="faq-answer">
+			<div class="browser-section">
+				<span class="platform">PC</span>
+				<ol>
+					<li>Click the three dots (⋯) in the top-right corner.</li>
+					<li>Select "Settings".</li>
+					<li>Click "Privacy, search, and services".</li>
+					<li>Click "Choose what to clear" under "Clear browsing data".</li>
+					<li>Set the time range to "All time".</li>
+					<li>Check "Cookies and other site data" and "Cached images and files".</li>
+					<li>Click the "Clear now" button.</li>
+				</ol>
+				<p>Quick method: Press <code>Ctrl + Shift + Delete</code> to directly open the clearing window.</p>
+			</div>
+
+			<div class="browser-section">
+				<span class="platform">Mobile</span>
+				<ol>
+					<li>Open the Edge app.</li>
+					<li>Tap the three dots (⋯) at the bottom.</li>
+					<li>Tap "Settings".</li>
+					<li>Tap "Privacy and security".</li>
+					<li>Tap "Clear browsing data".</li>
+					<li>Choose the time range and data types to clear.</li>
+					<li>Tap "Clear data".</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">5. How to clear cache in Samsung Internet browser</div>
+		<div class="faq-answer">
+			<div class="browser-section">
+				<span class="platform">Mobile</span>
+				<ol>
+					<li>Open the Samsung Internet app.</li>
+					<li>Tap the menu button (≡) at the bottom-right corner.</li>
+					<li>Tap "Settings".</li>
+					<li>Tap "Privacy and security".</li>
+					<li>Tap "Delete browsing data".</li>
+					<li>Check "Cache" and "Cookies and site data".</li>
+					<li>Tap the "Delete" button.</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<h2>Telegram MiniApp Cache Clearing</h2>
+
+	<div class="faq-item">
+		<div class="faq-question">6. How to clear MiniApp cache in Telegram PC</div>
+		<div class="faq-answer">
+			<div class="browser-section">
+				<span class="platform">PC</span>
+				<ol>
+					<li>Open the Telegram desktop app.</li>
+					<li>Click the hamburger menu (≡) in the top-left corner.</li>
+					<li>Select "Settings".</li>
+					<li>Click "Advanced".</li>
+					<li>Click "Data and Storage".</li>
+					<li>Click "Clear Cache".</li>
+					<li>Confirm by clicking "Clear".</li>
+				</ol>
+				<p class="warning">
+					This will clear the cache for all MiniApps together. If you want to reset only a specific MiniApp,
+					try reopening the MiniApp and pressing the refresh key (F5), or check if the MiniApp has cache
+					clearing options in its settings.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">7. How to clear MiniApp cache in Telegram Mobile</div>
+		<div class="faq-answer">
+			<div class="browser-section">
+				<span class="platform">Android</span>
+				<ol>
+					<li>Open the Telegram app.</li>
+					<li>Tap the hamburger menu (≡) in the top-left corner.</li>
+					<li>Tap "Settings".</li>
+					<li>Tap "Data and Storage".</li>
+					<li>Tap "Storage Usage".</li>
+					<li>Tap "Clear Cache".</li>
+					<li>Confirm by tapping "Clear".</li>
+				</ol>
+			</div>
+
+			<div class="browser-section">
+				<span class="platform">iOS</span>
+				<ol>
+					<li>Open the Telegram app.</li>
+					<li>Tap "Settings" at the bottom.</li>
+					<li>Tap "Data and Storage".</li>
+					<li>Tap "Storage Usage".</li>
+					<li>Tap "Clear Cache".</li>
+					<li>Confirm by tapping "Clear Cache".</li>
+				</ol>
+			</div>
+
+			<p class="warning">
+				Completely closing and reopening the Telegram app can also help reset the cache for MiniApps.
+				Additionally, some MiniApps may provide their own cache clearing options within the app, so check the
+				MiniApp's settings.
+			</p>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">8. How to refresh a specific web game/MiniApp</div>
+		<div class="faq-answer">
+			<p>
+				Ways to refresh a web game or MiniApp without completely clearing the cache:
+			</p>
+
+			<div class="browser-section">
+				<span class="platform">PC</span>
+				<ul>
+					<li>Most browsers: Press the <code>F5</code> key or <code>Ctrl + R</code>.</li>
+					<li>Force refresh (bypass cache): Press <code>Ctrl + F5</code> or <code>Ctrl + Shift + R</code>.
+					</li>
+					<li>Telegram MiniApp: Press the <code>F5</code> key while in the MiniApp, or close and reopen the
+						MiniApp.</li>
+				</ul>
+			</div>
+
+			<div class="browser-section">
+				<span class="platform">Mobile</span>
+				<ul>
+					<li>Most browsers: Pull down on the screen to refresh.</li>
+					<li>Telegram MiniApp: Close and reopen the MiniApp, or completely exit the Telegram app and relaunch
+						it.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">9. What to do if problems persist after clearing cache</div>
+		<div class="faq-answer">
+			<p>
+				If issues persist after clearing the cache, try these methods:
+			</p>
+			<ul>
+				<li>Update your browser or Telegram app to the latest version.</li>
+				<li>Try accessing with a different browser.</li>
+				<li>Switch between mobile data and Wi-Fi.</li>
+				<li>Restart your device.</li>
+				<li>Contact the web game or MiniApp developer for support.</li>
+			</ul>
+			<p class="warning">
+				For some games or apps, login information may be stored on servers and won't be reset by clearing the
+				cache alone. In such cases, try logging out and logging back in to your account.
+			</p>
+		</div>
+	</div>
+
+	<div class="faq-item">
+		<div class="faq-question">10. Why regular cache management is necessary</div>
+		<div class="faq-answer">
+			<p>
+				Reasons why regular cache management is important:
+			</p>
+			<ul>
+				<li>Improved web game performance: Outdated cache files can slow down game loading times.</li>
+				<li>Bug fixes: New versions of updated games or apps may not load properly with old cache.</li>
+				<li>Free up storage space: Cache can take up significant storage space over time.</li>
+				<li>Data protection: Cache may contain personal information, so periodic deletion helps with security.
+				</li>
+			</ul>
+			<p>
+				In most cases, it's good practice to clear your cache once every 1-3 months. Always try clearing the
+				cache when you encounter issues with web games or MiniApps.
+			</p>
+		</div>
+	</div>
+</body>
+
+</html>

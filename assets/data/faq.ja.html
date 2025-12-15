@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>BitBULL よくある質問 (FAQ)</title>
+		<style>
+			body {
+				font-family: "Arial", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+					"Meiryo", sans-serif;
+				line-height: 1.6;
+				color: #e0e0e0;
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 20px;
+				background-color: #1f1f1f;
+			}
+
+			h1 {
+				color: #ff6b00;
+				text-align: center;
+				padding-bottom: 10px;
+				border-bottom: 2px solid #ff6b00;
+				margin-bottom: 30px;
+			}
+
+			h2 {
+				color: #ff6b00;
+				margin-top: 30px;
+				padding-bottom: 5px;
+				border-bottom: 1px solid #ddd;
+			}
+
+			p {
+				margin-bottom: 20px;
+			}
+
+			.faq-item {
+				background-color: #2a2a2a;
+				padding: 15px 20px;
+				margin-bottom: 15px;
+				border-radius: 8px;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+			}
+
+			.faq-question {
+				font-weight: bold;
+				color: #ff8c2e;
+				margin-bottom: 10px;
+				font-size: 1.1em;
+			}
+
+			.faq-answer {
+				padding-left: 15px;
+			}
+
+			ul,
+			ol {
+				padding-left: 20px;
+			}
+
+			li {
+				margin-bottom: 8px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>BitBULL よくある質問 (FAQ)</h1>
+
+		<div class="faq-item">
+			<div class="faq-question">
+				1. BitBULLとはどのようなサイトですか？
+			</div>
+			<div class="faq-answer">
+				<p>
+					BitBULLはビットコイン先物価格が@@gameperiod@@秒後に上昇するか下落するかを予測するゲームです。
+				</p>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">2. ゲーム説明</div>
+			<div class="faq-answer">
+				<p>
+					BitBULLはビットコイン先物価格が@@gameperiod@@秒後に上昇するか下落するかを予測するゲームです。
+				</p>
+				<ul>
+					<li>
+						予測が当たると、反対側に賭けられた金額を勝利賞金として獲得できます。
+					</li>
+					<li>予測が外れると、賭けた金額を失います。</li>
+					<li>
+						自分だけが正確に予測した場合、反対側の賭け金額をすべて獲得する大きな報酬を受け取ることができます。
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">3. ベッティングルール</div>
+			<div class="faq-answer">
+				<p><strong>決められた金額リストからのみベッティング可能</strong></p>
+				<ul>
+					<li>現在選択可能なベッティング金額は5、@@betlist@@ ゴールドです。</li>
+				</ul>
+				<p><strong>ベッティングは1回のみ可能</strong></p>
+				<ul>
+					<li>
+						一度ベッティングした後は追加ベッティングはできません。（例：5ゴールドをベットした後、追加で10ゴールドをベットすることはできません）
+					</li>
+				</ul>
+				<p><strong>反対側へのベッティングも不可</strong></p>
+				<ul>
+					<li>
+						1ラウンドでアップ（Up）とダウン（Down）の両方に同時にベットすることはできません。
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">4. 配当率はどのように計算されますか？</div>
+			<div class="faq-answer">
+				<p>
+					配当率はアップ（Up）とダウン（Down）に集まった総ゴールド量を基準に自動変動します。
+				</p>
+				<p><strong>計算方法：</strong></p>
+				<ol>
+					<li>
+						アップ（Up）とダウン（Down）に集まった総ゴールドを合算します。
+					</li>
+					<li>決められたレーク（@@rake@@％）を差し引きます。</li>
+					<li>
+						残りの金額をそれぞれアップ/ダウンのベッティング金額の比率に従って配分します。
+					</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">
+				5. ベッティングに勝利するといくら受け取れますか？
+			</div>
+			<div class="faq-answer">
+				<p>
+					配当金は反対側のプールから自分の比率分を取得する方式で決定されます。
+				</p>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">
+				6. ドロー（無効）の状況はどのような場合ですか？
+			</div>
+			<div class="faq-answer">
+				<p>
+					@@gameperiod@@秒後の価格がベッティング開始価格と同じ場合、ゲームは無効処理され、ベットしたゴールドはそのまま返還されます。
+				</p>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">7. 入金と出金はどのように行われますか？</div>
+			<div class="faq-answer">
+				<ul>
+					<li>
+						<strong>入金：</strong>
+						USDTをウォレットアドレスに送ると自動的にゴールドに変換されます。（入金時に発生する送金手数料はユーザーが負担する必要があります。）
+					</li>
+					<li>
+						<strong>出金：</strong>
+						管理者の確認後30分以内に処理され、出金時の送金手数料はプラットフォームが負担します。
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">
+				8. ビットコイン先物価格データはどこから取得していますか？
+			</div>
+			<div class="faq-answer">
+				<p>
+					BitBULLはバイナンス先物（Binance
+					Futures）価格を基準にビットコイン価格を決定します。
+				</p>
+				<p>
+					バイナンスはグローバル暗号資産取引所の中で最も流動性が高い市場を提供しているため、リアルタイムで信頼できるデータを反映し、公正なゲームを保証します。
+				</p>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">
+				9. プラットフォーム手数料はどのように課されますか？
+			</div>
+			<div class="faq-answer">
+				<ul>
+					<li>
+						<strong>ゲーム手数料：</strong>
+						総ベッティング金額から@@rake@@％のレークが差し引かれます。
+					</li>
+					<li>
+						<strong>入金手数料：</strong>
+						USDT入金時に発生するネットワーク送金手数料はユーザー負担です。
+					</li>
+					<li>
+						<strong>出金手数料：</strong>
+						USDT出金時に発生するネットワーク送金手数料はプラットフォームが負担します。
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">10. 公正なゲームですか？</div>
+			<div class="faq-answer">
+				<p>
+					はい、バイナンス先物市場のリアルタイムデータを反映して公正に運営されています。価格操作が不可能な透明なアルゴリズムを使用しています。
+				</p>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">
+				11. アカウントのセキュリティはどのように保証されていますか？
+			</div>
+			<div class="faq-answer">
+				<p>BitBULLはユーザーのセキュリティを最優先しています。</p>
+				<ul>
+					<li>
+						<strong>パスワードセキュリティ：</strong>
+						パスワードは大文字、小文字、数字、特殊文字を含む8文字以上で設定する必要があります。
+					</li>
+					<li>
+						<strong>データ暗号化：</strong>
+						プラットフォームは強力な暗号化方式を利用してデータベース（DB）に情報を保存します。
+					</li>
+					<li>
+						<strong>セキュリティプロトコル：</strong>
+						HTTPSプロトコルを使用してサービスが提供されます。重要なデータは追加暗号化を経て安全に転送されます。
+					</li>
+					<li>
+						<strong>同時接続制限：</strong>
+						同一アカウントで複数の端末から同時にゲームを進行することはできません。
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="faq-item">
+			<div class="faq-question">
+				12. カスタマーサポートはどのように受けられますか？
+			</div>
+			<div class="faq-answer">
+				<p>
+					BitBULLは1:1問い合わせシステムを通じてカスタマーサポートを提供します。
+				</p>
+				<ul>
+					<li>
+						<strong>24時間リアルタイム対応：</strong>
+						専門GM（ゲームマスター）がリアルタイムで問い合わせを処理します。問い合わせ受付後、迅速な回答を受け取ることができます。
+					</li>
+					<li>
+						<strong>問い合わせ方法：</strong>
+						サイト内の1:1問い合わせシステムを利用
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
